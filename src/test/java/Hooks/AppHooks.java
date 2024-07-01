@@ -2,7 +2,6 @@ package Hooks;
 
 import java.io.IOException;
 import org.openqa.selenium.WebDriver;
-
 import DriverFactory.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
