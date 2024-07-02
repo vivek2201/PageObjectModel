@@ -7,20 +7,22 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
 
-public class AppHooks {
-	DriverFactory driverfactory;
-	public WebDriver driver;
-	@Before(order=0)
-	public void preCondition() throws IOException
+public class AppHooks extends DriverFactory{
+	WebDriver driver;
+
+	/*
+	 * @Before(order=0) public void preCondition() throws IOException { this.driver=
+	 * init_driver(); this.driver.get("amazon.com"); }
+	 */
+	@Before
+	public void openBrowser()
 	{
-		driver= driverfactory.init_driver();
-		driver.get("Amazon.com.au");
+		driver=init_driver();
+		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 	}
-	@After(order=0)
-	public void teardown()
-	{
-		driver.quit();
-	}
+	/*
+	 * @After(order=0) public void teardown() { driver.quit(); }
+	 */
 	/*
 	 * @After(order=1) public void screenshots(Scenario scenario) {
 	 * if(scenario.isFailed()) { //takesscreenshot //String screenahotname=
