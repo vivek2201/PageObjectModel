@@ -1,19 +1,24 @@
 package ReadProperties;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
 public class ReadProp {
-	static String Browser;
-	
-	public static String getBrowser() throws IOException
+	String Browser;
+	public String getBrowser() throws IOException
 	{
 	Properties properties = new Properties();
-	FileInputStream fis=new FileInputStream("config.properties");
+	FileInputStream fis=new FileInputStream("C:\\Users\\Vivek\\Desktop\\automation\\Selenium1\\src\\test\\resources\\config\\config.properties");
 	properties.load(fis);
-	fis.close();
-	Browser = properties.getProperty("browser");
+	try {
+		Browser = properties.getProperty("browser");
+		System.out.println("Brwser value="+Browser);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	return Browser;
 	}
 	
