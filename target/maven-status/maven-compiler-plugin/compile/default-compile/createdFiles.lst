@@ -1,4 +1,6 @@
 Pages\LoginPage.class
 DriverFactory\DriverFactory.class
+ReadExcel\ReadExcel.class
+ReadJson\ReadJson.class
 ReadProperties\ReadProp.class
 Utilities\ElementUtil.class

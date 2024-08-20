@@ -3,9 +3,9 @@ package TestRunner;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features="src/test/resources/features",
+@CucumberOptions(features="@target/failedrerun.txt",
 glue= {"stepDefinition","Hooks"},
 plugin={"pretty","rerun:target/failedrerun.txt"})
-public class MyTestRunner extends AbstractTestNGCucumberTests{
+public class FailedRunner extends AbstractTestNGCucumberTests {
 
 }

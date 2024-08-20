@@ -13,11 +13,6 @@ import io.cucumber.java.Scenario;
 
 public class AppHooks extends DriverFactory{
 	WebDriver driver;
-
-	/*
-	 * @Before(order=0) public void preCondition() throws IOException { this.driver=
-	 * init_driver(); this.driver.get("amazon.com"); }
-	 */
 	@Before
 	public void openBrowser()
 	{
@@ -25,10 +20,12 @@ public class AppHooks extends DriverFactory{
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 	}
 	
-	 @After(order=0) public void teardown() { driver.quit(); }
+	 @After
+	 public void teardown() { driver.quit(); }
 	 
 	
-	 @After(order=1) public void screenshots(Scenario scenario) {
+	 @After
+	 public void screenshots(Scenario scenario) {
 	  if(scenario.isFailed()) { 
 		 String screenahotname= scenario.getName().replaceAll("", "-");
 		  TakesScreenshot takesscreenshot =
