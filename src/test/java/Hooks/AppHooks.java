@@ -36,6 +36,7 @@ public class AppHooks extends DriverFactory{
 		  byte[] sorcepath=
 	 takesscreenshot.getScreenshotAs(OutputType.BYTES);
 	 scenario.attach(sorcepath, "image/png",screenahotname);
+
 	 
 	  } }
 	 
